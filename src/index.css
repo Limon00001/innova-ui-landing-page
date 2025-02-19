@@ -1,0 +1,23 @@
+/*
+  Author: Monayem Hossain Limon
+  GitHub: https://github.com/Limon00001
+  Date: 19 Feb, 2025
+  @copyright 2025 monayem_hossain_limon
+*/
+
+/* Tailwind CSS */
+@import 'tailwindcss';
+
+/* Global Styles */
+*,
+::after,
+::before,
+::backdrop,
+::file-selector-button {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration-line: none;
+  list-style: none;
+  scroll-behavior: smooth;
+}
