@@ -9,7 +9,7 @@
 @import 'tailwindcss';
 
 /* Global Styles */
-*,
+html,
 ::after,
 ::before,
 ::backdrop,

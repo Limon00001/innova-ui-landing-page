@@ -5,23 +5,12 @@
  * @copyright 2025 monayem_hossain_limon
  */
 
+// Internal Dependencies
+import Navbar from './components/Navbar';
+
 const App = () => {
-  return (
-    <nav className="">
-      <div>
-        <div>
-          {/* Logo */}
-          <div></div>
-          {/* Desktop Menu */}
-          <div></div>
-          {/* Button */}
-          <div></div>
-          {/* Mobile Menu */}
-          <div></div>
-        </div>
-      </div>
-    </nav>
-  );
+  return <Navbar />;
 };
 
+// Export
 export default App;
