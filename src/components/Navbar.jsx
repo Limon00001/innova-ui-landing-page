@@ -7,7 +7,7 @@
 
 // External Dependencies
 import { useState } from 'react';
-import { MdKeyboardArrowDown } from 'react-icons/md';
+import { MdClose, MdKeyboardArrowDown, MdMenu } from 'react-icons/md';
 import { Link } from 'react-router';
 
 // Internal Dependencies
@@ -35,6 +35,7 @@ const Navbar = () => {
               <span className="text-blue-500">Innova</span> UI
             </Link>
           </div>
+
           {/* Desktop Menu */}
           <div className="hidden lg:flex items-center space-x-4">
             {Object.keys(menuItems).map((key) => (
@@ -90,7 +91,9 @@ const Navbar = () => {
                           {menuItems[key].items.map((item, index) => (
                             <Link
                               key={index}
-                              to={`/${key}/${item.name.toLowerCase()}`}
+                              to={`/${key}/${item.name
+                                .toLowerCase()
+                                .replace(/\s+/g, '-')}`}
                               className="group flex items-start p-2 rounded-lg hover:bg-gray-50"
                             >
                               <div className="px-4">
@@ -123,10 +126,42 @@ const Navbar = () => {
               Pricing
             </Link>
           </div>
+
           {/* Button */}
-          <div></div>
+          <div className="hidden md:flex items-center space-x-4">
+            <Link
+              to="/login"
+              className="hidden xl:block hover:text-gray-300 text-sm font-medium px-3 py-2 rounded-md"
+            >
+              Login
+            </Link>
+            <Link
+              to="/login"
+              className="hidden xl:block hover:text-gray-300 text-sm font-medium px-3 py-2 rounded-md"
+            >
+              Contact Sales
+            </Link>
+            <Link
+              to="/login"
+              className="hover:text-gray-300 text-sm font-medium px-3 py-2 rounded-md bg-blue-600 hover:bg-blue-700"
+            >
+              Get Started - It&apos;s Free
+            </Link>
+          </div>
+
           {/* Mobile Menu */}
-          <div className="md:hidden"></div>
+          <div className="md:hidden">
+            <button
+              onClick={toggleMenu}
+              className="inline-flex items-center justify-center p-2 rounded-md hover:text-gray-300 hover:bg-gray-700"
+            >
+              {isMenuOpen ? (
+                <MdMenu className="block h-6 w-6 cursor-pointer" />
+              ) : (
+                <MdClose className="block h-6 w-6 cursor-pointer" />
+              )}
+            </button>
+          </div>
         </div>
       </div>
     </nav>
