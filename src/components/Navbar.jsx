@@ -18,7 +18,7 @@ const Navbar = () => {
   const [activeDropDown, setActiveDropDown] = useState(null);
 
   const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
+    setIsMenuOpen((prev) => !prev);
   };
 
   const toggleDropDown = (menu) => {
@@ -153,21 +153,118 @@ const Navbar = () => {
             </Link>
           </div>
 
-          {/* Mobile Menu */}
+          {/* Mobile Hamburger */}
           <div className="md:hidden">
             <button
               onClick={toggleMenu}
               className="inline-flex items-center justify-center p-2 rounded-md hover:text-gray-300 hover:bg-gray-700"
             >
               {isMenuOpen ? (
-                <MdMenu className="block h-6 w-6 cursor-pointer" />
-              ) : (
                 <MdClose className="block h-6 w-6 cursor-pointer" />
+              ) : (
+                <MdMenu className="block h-6 w-6 cursor-pointer" />
               )}
             </button>
           </div>
         </div>
       </div>
+
+      {/* Mobile Menu */}
+      {isMenuOpen && (
+        <div className="md:hidden max-w-[40rem] mx-auto">
+          <div className="px-2 pt-2 pb-3 space-y-1">
+            {Object.keys(menuItems).map((key) => (
+              <div key={key} className="space-y-2">
+                <button
+                  onClick={() => toggleDropDown(key)}
+                  className="flex items-center hover:text-gray-300 px-3 py-2 rounded-md"
+                >
+                  {menuItems[key].title}
+                  <MdKeyboardArrowDown
+                    className={`ml-2 h-5 w-5 transition-transform ${
+                      activeDropDown === key ? 'transform rotate-180' : ''
+                    }`}
+                  />
+                </button>
+
+                {/* Dropdown */}
+                {activeDropDown === key && (
+                  <div className="bg-white text-gray-900 rounded">
+                    <div className="pl-4">
+                      {key === 'platform' ? (
+                        menuItems[key].sections.map((section, index) => (
+                          <div key={index} className="py-2">
+                            <h3 className="text-xs font-semibold text-gray-500 tracking-wider mb-2">
+                              {section.title}
+                            </h3>
+                            <div>
+                              {section.items.map((item, index) => (
+                                <Link
+                                  key={index}
+                                  to={`/${key}/${item.name
+                                    .toLowerCase()
+                                    .trim()
+                                    .replace(/\s+/g, '-')}`}
+                                  className="group flex items-start p-2 rounded-lg hover:bg-gray-50"
+                                >
+                                  <div className="px-4">
+                                    <p className="flex items-center text-sm font-medium text-gray-900">
+                                      {item.name}
+                                      {item.isNew && (
+                                        <span className="ml-2 inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-blue-100 uppercase">
+                                          New
+                                        </span>
+                                      )}
+                                    </p>
+                                  </div>
+                                </Link>
+                              ))}
+                            </div>
+                          </div>
+                        ))
+                      ) : (
+                        <div className="space-y-2">
+                          {menuItems[key].items.map((item, index) => (
+                            <Link
+                              key={index}
+                              to={`/${key}/${item.name
+                                .toLowerCase()
+                                .trim()
+                                .replace(/\s+/g, '-')}`}
+                              className="group flex items-start p-2 rounded-lg hover:bg-gray-50"
+                            >
+                              <div className="px-4">
+                                <p className="text-sm font-medium text-gray-900">
+                                  {item.name}
+                                </p>
+                                <p className="text-sm text-gray-500">
+                                  {item.desc}
+                                </p>
+                              </div>
+                            </Link>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                )}
+              </div>
+            ))}
+            <Link
+              to="/enterprise"
+              className="group flex items-center px-3 py-2 text-base rounded-md"
+            >
+              Enterprise
+            </Link>
+            <Link
+              to="/pricing"
+              className="group flex items-center px-3 py-2 text-base rounded-md"
+            >
+              Pricing
+            </Link>
+          </div>
+        </div>
+      )}
     </nav>
   );
 };
