@@ -65,7 +65,10 @@ const Navbar = () => {
                               {section.items.map((item, index) => (
                                 <Link
                                   key={index}
-                                  to={`/${key}/${item.name.toLowerCase()}`}
+                                  to={`/${key}/${item.name
+                                    .toLowerCase()
+                                    .trim()
+                                    .replace(/\s+/g, '-')}`}
                                   className="group flex items-start p-2 rounded-lg hover:bg-gray-50"
                                 >
                                   <div className="px-4">
@@ -93,6 +96,7 @@ const Navbar = () => {
                               key={index}
                               to={`/${key}/${item.name
                                 .toLowerCase()
+                                .trim()
                                 .replace(/\s+/g, '-')}`}
                               className="group flex items-start p-2 rounded-lg hover:bg-gray-50"
                             >
