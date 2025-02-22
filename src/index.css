@@ -21,3 +21,16 @@ html,
   list-style: none;
   scroll-behavior: smooth;
 }
+
+@keyframes horizontalScroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.horizontal-scroll {
+  animation: horizontalScroll 30s linear infinite;
+}

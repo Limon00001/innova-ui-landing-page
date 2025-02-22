@@ -16,7 +16,7 @@ import video from '../assets/banner-video.mp4';
 
 const Hero = () => {
   return (
-    <div className="pt-24 bg-black text-white md:pt-32">
+    <section className="pt-24 bg-black text-white md:pt-32">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-16 relative">
         {/* Subtitle */}
         <div className="mb-6">
@@ -85,7 +85,7 @@ const Hero = () => {
         {/* Overlay */}
         <div className="hidden md:block absolute left-0 right-0 bottom-0 h-1/2 z-10 bg-gradient-to-t from-black to-transparent"></div>
       </div>
-    </div>
+    </section>
   );
 };
 
