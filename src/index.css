@@ -22,6 +22,10 @@ html,
   scroll-behavior: smooth;
 }
 
+@theme {
+  --color-primary: #080806;
+}
+
 @keyframes horizontalScroll {
   from {
     transform: translateX(0);

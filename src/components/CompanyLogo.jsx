@@ -5,7 +5,8 @@
  * @copyright 2025 monayem_hossain_limon
  */
 
-import { logos } from '../../public/data';
+// Internal Dependencies
+import { logos } from '../assets/data.js';
 
 const CompanyLogo = () => {
   return (

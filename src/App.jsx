@@ -7,6 +7,7 @@
 
 // Internal Dependencies
 import CompanyLogo from './components/CompanyLogo';
+import Features from './components/Features';
 import Hero from './components/Hero';
 import Navbar from './components/Navbar';
 
@@ -16,6 +17,7 @@ const App = () => {
       <Navbar />
       <Hero />
       <CompanyLogo />
+      <Features />
     </>
   );
 };

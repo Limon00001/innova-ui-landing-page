@@ -11,7 +11,7 @@ import { MdClose, MdKeyboardArrowDown, MdMenu } from 'react-icons/md';
 import { Link } from 'react-router';
 
 // Internal Dependencies
-import { menuItems } from '../../public/data';
+import { menuItems } from '../assets/data.js';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
