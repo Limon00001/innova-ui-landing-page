@@ -10,7 +10,7 @@ import { features } from '../assets/data';
 const Features = () => {
   return (
     <section className="bg-primary text-white">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-32">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {features.map((feature) => (
             <div
