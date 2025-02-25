@@ -26,8 +26,8 @@ const Hero = () => {
         </div>
 
         {/* Title */}
-        <h1 className="text-4xl sm:text-5xl lg:text-8xl font-bold mb-8 md:mb-16 leading-[1.1] tracking-[-0.02em]">
-          Your site should do <br className="hidden md:block" /> more than just
+        <h1 className="text-[min(10vw,6rem)] font-bold mb-8 md:mb-16 leading-[1.1] tracking-[-0.02em]">
+          Your site should do <br className="hidden lg:block" /> more than just
           look good
         </h1>
 
