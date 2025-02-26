@@ -11,6 +11,7 @@ import DesignSection from './components/DesignSection';
 import Features from './components/Features';
 import Hero from './components/Hero';
 import Navbar from './components/Navbar';
+import Testimonial from './components/Testimonial';
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
       <CompanyLogo />
       <Features />
       <DesignSection />
+      <Testimonial />
     </>
   );
 };

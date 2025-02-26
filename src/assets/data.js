@@ -292,7 +292,7 @@ const tabsData = [
 ];
 
 // customer section data
-const customerData = [
+const testimonials = [
   {
     id: 'techstart',
     logo: 'https://cdn.prod.website-files.com/66e88746834b80507cdf7933/66ec7ff7808fef2aeecfff1b_Outliant.svg',
@@ -422,11 +422,11 @@ const footerLinks = {
 // Export
 export {
   aboutFeatures,
-  customerData,
   features,
   footerLinks,
   logos,
   menuItems,
   // socialLinks,
   tabsData,
+  testimonials,
 };
