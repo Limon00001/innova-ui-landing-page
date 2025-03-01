@@ -6,6 +6,7 @@
  */
 
 // Internal Dependencies
+import About from './components/About';
 import CompanyLogo from './components/CompanyLogo';
 import DesignSection from './components/DesignSection';
 import Features from './components/Features';
@@ -22,6 +23,7 @@ const App = () => {
       <Features />
       <DesignSection />
       <Testimonial />
+      <About />
     </>
   );
 };

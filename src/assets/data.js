@@ -6,13 +6,13 @@
  */
 
 // External Dependencies
-// import {
-//   FaFacebook,
-//   FaInstagram,
-//   FaLinkedin,
-//   FaTwitter,
-//   FaYoutube,
-// } from 'react-icons/fa';
+import {
+  FaFacebook,
+  FaInstagram,
+  FaLinkedin,
+  FaTwitter,
+  FaYoutube,
+} from 'react-icons/fa';
 import { FiBarChart, FiLayout, FiServer, FiUploadCloud } from 'react-icons/fi';
 
 // navbar data
@@ -411,13 +411,13 @@ const footerLinks = {
   },
 };
 
-// const socialLinks = [
-//   { icon: <FaFacebook />, href: 'https://facebook.com' },
-//   { icon: <FaTwitter />, href: 'https://twitter.com' },
-//   { icon: <FaInstagram />, href: 'https://instagram.com' },
-//   { icon: <FaLinkedin />, href: 'https://linkedin.com' },
-//   { icon: <FaYoutube />, href: 'https://youtube.com' },
-// ];
+const socialLinks = [
+  { id: crypto.randomUUID(), icon: FaFacebook, href: 'https://facebook.com' },
+  { id: crypto.randomUUID(), icon: FaTwitter, href: 'https://twitter.com' },
+  { id: crypto.randomUUID(), icon: FaInstagram, href: 'https://instagram.com' },
+  { id: crypto.randomUUID(), icon: FaLinkedin, href: 'https://linkedin.com' },
+  { id: crypto.randomUUID(), icon: FaYoutube, href: 'https://youtube.com' },
+];
 
 // Export
 export {
@@ -426,7 +426,7 @@ export {
   footerLinks,
   logos,
   menuItems,
-  // socialLinks,
+  socialLinks,
   tabsData,
   testimonials,
 };
