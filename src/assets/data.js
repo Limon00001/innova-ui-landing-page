@@ -353,9 +353,9 @@ const aboutFeatures = [
   },
   {
     id: 'ai-2',
-    title: 'Generate text right within codetutor',
+    title: 'Generate text right within innovaUI',
     description:
-      'Quickly and easily create new content, natively within CodeTutor. From generating first-pass content to publishing at speed, the AI Assistant can help you develop variations with just a few clicks.',
+      'Quickly and easily create new content, natively within InnovaUI. From generating first-pass content to publishing at speed, the AI Assistant can help you develop variations with just a few clicks.',
     link: 'https://help.webflow.com/hc/articles/34295931022099',
     linkText: 'Explore documentation',
     video:
@@ -365,9 +365,9 @@ const aboutFeatures = [
   },
   {
     id: 'ai-3',
-    title: 'Generate text right within CodeTutor',
+    title: 'Generate text right within InnovaUI',
     description:
-      'Quickly and easily create new content, natively within codetutor. From generating first-pass content to publishing at speed, the AI Assistant can help you develop variations with just a few clicks.',
+      'Quickly and easily create new content, natively within innovaUI. From generating first-pass content to publishing at speed, the AI Assistant can help you develop variations with just a few clicks.',
     link: 'https://help.webflow.com/hc/articles/34295931022099',
     linkText: 'Explore documentation',
     video:

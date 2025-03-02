@@ -12,6 +12,7 @@ import { Link } from 'react-router';
 
 // Internal Dependencies
 import { menuItems } from '../assets/data.js';
+import Button from './Button.jsx';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -40,7 +41,7 @@ const Navbar = () => {
           <div className="hidden lg:flex items-center space-x-4">
             {Object.keys(menuItems).map((key) => (
               <div key={key} className="relative">
-                <button
+                <Button
                   onClick={() => toggleDropDown(key)}
                   className="flex items-center hover:text-gray-300 px-3 py-2 rounded-md text-sm font-medium"
                 >
@@ -50,7 +51,7 @@ const Navbar = () => {
                       activeDropDown === key ? 'transform rotate-180' : ''
                     }`}
                   />
-                </button>
+                </Button>
                 {/* Dropdown Menu */}
                 {activeDropDown === key && (
                   <div className="absolute left-0 mt-2 w-screen max-w-md bg-white rounded-md shadow-lg py-1 text-black">
@@ -98,7 +99,7 @@ const Navbar = () => {
                                 .toLowerCase()
                                 .trim()
                                 .replace(/\s+/g, '-')}`}
-                              className="group flex items-start p-2 rounded-lg hover:bg-gray-50"
+                              className="btn-group px-2 rounded-lg hover:bg-gray-50"
                             >
                               <div className="px-4">
                                 <p className="text-sm font-medium text-gray-900">
@@ -117,54 +118,42 @@ const Navbar = () => {
                 )}
               </div>
             ))}
-            <Link
-              to="/enterprise"
-              className="hover:text-gray-300 text-sm font-medium px-3 py-2 rounded-md"
-            >
+            <Button to="/enterprise" className="btn-navAuthLink py-2">
               Enterprise
-            </Link>
-            <Link
-              to="/pricing"
-              className="hover:text-gray-300 text-sm font-medium px-3 py-2 rounded-md"
-            >
+            </Button>
+            <Button to="/pricing" className="btn-navAuthLink py-2">
               Pricing
-            </Link>
+            </Button>
           </div>
 
           {/* Button */}
           <div className="hidden md:flex items-center space-x-4">
-            <Link
-              to="/login"
-              className="hidden xl:block hover:text-gray-300 text-sm font-medium px-3 py-2 rounded-md"
-            >
+            <Button to="/" className="hidden xl:block btn-navAuthLink">
               Login
-            </Link>
-            <Link
-              to="/login"
-              className="hidden xl:block hover:text-gray-300 text-sm font-medium px-3 py-2 rounded-md"
-            >
+            </Button>
+            <Button to="/" className="hidden xl:block btn-navAuthLink">
               Contact Sales
-            </Link>
-            <Link
-              to="/login"
-              className="hover:text-gray-300 text-sm font-medium px-3 py-2 rounded-md bg-blue-600 hover:bg-blue-700"
+            </Button>
+            <Button
+              to="/"
+              className="btn-navAuthLink py-2 bg-blue-600 hover:bg-blue-700"
             >
               Get Started - It&apos;s Free
-            </Link>
+            </Button>
           </div>
 
           {/* Mobile Hamburger */}
           <div className="md:hidden">
-            <button
+            <Button
               onClick={toggleMenu}
-              className="inline-flex items-center justify-center p-2 rounded-md hover:text-gray-300 hover:bg-gray-700"
+              className="btn-inline justify-center p-2 rounded-md hover:bg-gray-700"
             >
               {isMenuOpen ? (
                 <MdClose className="block h-6 w-6 cursor-pointer" />
               ) : (
                 <MdMenu className="block h-6 w-6 cursor-pointer" />
               )}
-            </button>
+            </Button>
           </div>
         </div>
       </div>
@@ -175,7 +164,7 @@ const Navbar = () => {
           <div className="px-2 pt-2 pb-3 space-y-1">
             {Object.keys(menuItems).map((key) => (
               <div key={key} className="space-y-2">
-                <button
+                <Button
                   onClick={() => toggleDropDown(key)}
                   className="flex items-center hover:text-gray-300 px-3 py-2 rounded-md"
                 >
@@ -185,7 +174,7 @@ const Navbar = () => {
                       activeDropDown === key ? 'transform rotate-180' : ''
                     }`}
                   />
-                </button>
+                </Button>
 
                 {/* Dropdown */}
                 {activeDropDown === key && (
@@ -205,7 +194,7 @@ const Navbar = () => {
                                     .toLowerCase()
                                     .trim()
                                     .replace(/\s+/g, '-')}`}
-                                  className="group flex items-start p-2 rounded-lg hover:bg-gray-50"
+                                  className="btn-group px-2 rounded-lg hover:bg-gray-50"
                                 >
                                   <div className="px-4">
                                     <p className="flex items-center text-sm font-medium text-gray-900">
@@ -231,7 +220,7 @@ const Navbar = () => {
                                 .toLowerCase()
                                 .trim()
                                 .replace(/\s+/g, '-')}`}
-                              className="group flex items-start p-2 rounded-lg hover:bg-gray-50"
+                              className="btn-group px-2 rounded-lg hover:bg-gray-50"
                             >
                               <div className="px-4">
                                 <p className="text-sm font-medium text-gray-900">
@@ -250,18 +239,12 @@ const Navbar = () => {
                 )}
               </div>
             ))}
-            <Link
-              to="/enterprise"
-              className="group flex items-center px-3 py-2 text-base rounded-md"
-            >
+            <Button to="/" className="btn-group px-3 text-base rounded-md">
               Enterprise
-            </Link>
-            <Link
-              to="/pricing"
-              className="group flex items-center px-3 py-2 text-base rounded-md"
-            >
+            </Button>
+            <Button to="/" className="btn-group px-3 text-base rounded-md">
               Pricing
-            </Link>
+            </Button>
           </div>
         </div>
       )}

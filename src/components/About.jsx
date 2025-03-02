@@ -11,6 +11,7 @@ import { HiArrowRight } from 'react-icons/hi';
 
 // Internal Dependencies
 import { aboutFeatures } from '../assets/data';
+import Button from './Button';
 
 const About = () => {
   const [activeFeatures, setActiveFeatures] = useState(0);
@@ -76,13 +77,10 @@ const About = () => {
               content — design the layout once and any new content will
               automatically follow it.
             </p>
-            <a
-              href="#"
-              className="inline-flex items-center text-white hover:text-gray-300 text-lg font-medium transition-colors"
-            >
+            <Button href="#" className="btn-inline text-lg font-medium">
               Discover AI at InnovaUI
               <HiArrowRight className="ml-2 w-5 h-5" />
-            </a>
+            </Button>
           </div>
         </div>
 
@@ -120,13 +118,10 @@ const About = () => {
                 contextual design and writing help, machine-powered translation,
                 and more.
               </p>
-              <a
-                href="#"
-                className="inline-flex items-center text-white hover:text-gray-300 text-lg font-medium transition-colors"
-              >
+              <Button href="#" className="btn-inline text-lg font-medium">
                 Discover AI at InnovaUI
                 <HiArrowRight className="ml-2 w-5 h-5" />
-              </a>
+              </Button>
             </div>
 
             {/* Features List */}
@@ -143,13 +138,10 @@ const About = () => {
                   <p className="text-xl text-gray-300 mb-8 max-w-[35rem]">
                     {feature.description}
                   </p>
-                  <a
-                    href="#"
-                    className="inline-flex items-center text-white hover:text-gray-300 text-lg font-medium transition-colors"
-                  >
+                  <Button href="#" className="btn-inline text-lg font-medium">
                     Discover AI at InnovaUI
                     <HiArrowRight className="ml-2 w-5 h-5" />
-                  </a>
+                  </Button>
                 </div>
               ))}
             </div>

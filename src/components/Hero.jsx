@@ -7,12 +7,12 @@
 
 // External Dependencies
 import { HiArrowLongRight } from 'react-icons/hi2';
-import { Link } from 'react-router';
 
 // Internal Dependencies
 import bannerLeft from '../assets/banner-left.avif';
 import bannerRight from '../assets/banner-right.png';
 import video from '../assets/banner-video.mp4';
+import Button from './Button';
 
 const Hero = () => {
   return (
@@ -41,19 +41,19 @@ const Hero = () => {
           </p>
           {/* Buttons */}
           <div className="flex flex-wrap sm:flex-row gap-8 shrink-0">
-            <Link
-              to="/start-building"
-              className="bg-[#4353FF] hover:bg-blue-700 text-white px-8 py-4 rounded text-lg font-medium transition-colors duration-200"
+            <Button
+              to="/"
+              className="btn-style bg-[#4353FF] hover:bg-blue-700 rounded"
             >
               Start Building
-            </Link>
-            <Link
-              to="/contact-sales"
-              className="flex items-center text-white px-8 py-4 rounded group text-lg font-medium transition-colors duration-200 hover:text-white/50"
+            </Button>
+            <Button
+              to="/"
+              className="btn-style flex items-center group hover:text-white/50"
             >
               Contact Sales{' '}
               <HiArrowLongRight className="size-5 ml-3 group-hover:translate-x-1 transition-transform duration-200" />
-            </Link>
+            </Button>
           </div>
         </div>
 

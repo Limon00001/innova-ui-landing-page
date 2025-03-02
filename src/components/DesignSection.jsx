@@ -9,10 +9,10 @@
 import { useEffect, useRef, useState } from 'react';
 import { BsPauseFill, BsPlayFill } from 'react-icons/bs';
 import { HiArrowLongRight } from 'react-icons/hi2';
-import { Link } from 'react-router';
 
 // Internal Dependencies
 import { tabsData } from '../assets/data';
+import Button from './Button';
 
 const DesignSection = () => {
   const [activeTab, setActiveTab] = useState('tab1');
@@ -88,10 +88,13 @@ const DesignSection = () => {
                 - so your dev team can focus on more complex work, not
                 pixel-perfect revisions.
               </p>
-              <Link className="inline-flex items-center group px-6 py-3 bg-blue-600 text-white font-semibold tracking-wider rounded-md hover:bg-blue-700 transition-colors mt-8">
+              <Button
+                to="/"
+                className="btn-inline group px-6 py-3 bg-blue-600 font-semibold tracking-wider rounded-md hover:bg-blue-700 mt-8"
+              >
                 Get Started{' '}
-                <HiArrowLongRight className="ms-2 size-5 group-hover:translate-x-1 transition-transform duration-200" />
-              </Link>
+                <HiArrowLongRight className="ml-3 size-5 group-hover:translate-x-1 transition-transform duration-200" />
+              </Button>
             </div>
 
             {/* Accrodians */}
@@ -159,15 +162,12 @@ const DesignSection = () => {
 
                   {/* Pointer */}
                   <div className="flex items-center justify-between mt-4">
-                    <Link
-                      to="/"
-                      className="inline-flex items-center hover:text-gray-300 transition-colors duration-100"
-                    >
+                    <Button to="/" className="btn-inline duration-100">
                       {tab.cta.text} <HiArrowLongRight className="ml-2" />
-                    </Link>
+                    </Button>
 
                     {/* Play/Pause Button */}
-                    <button
+                    <Button
                       onClick={handlePlayPause}
                       className="p-2 text-white hover:text-gray-300 cursor-pointer"
                     >
@@ -176,7 +176,7 @@ const DesignSection = () => {
                       ) : (
                         <BsPlayFill className="size-6" />
                       )}
-                    </button>
+                    </Button>
                   </div>
                 </div>
               ))}

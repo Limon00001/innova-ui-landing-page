@@ -12,6 +12,7 @@ import { HiArrowLeft, HiArrowRight } from 'react-icons/hi';
 
 // Internal Dependencies
 import { testimonials } from '../assets/data';
+import Button from './Button';
 
 const Testimonial = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -60,20 +61,20 @@ const Testimonial = () => {
             </h2>
           </div>
           <div className="hidden md:flex gap-4">
-            <button
+            <Button
               onClick={handlePrevSlide}
-              className="p-4 hover:bg-gray-200 rounded-full transition-colors cursor-pointer"
+              className="p-4 hover:bg-gray-200 rounded-full cursor-pointer"
               aria-label="Previous slide"
             >
               <HiArrowLeft className="w-6 h-6" />
-            </button>
-            <button
+            </Button>
+            <Button
               onClick={handleNextSlide}
-              className="p-4 hover:bg-gray-200 rounded-full transition-colors cursor-pointer"
+              className="p-4 hover:bg-gray-200 rounded-full cursor-pointer"
               aria-label="Next slide"
             >
               <HiArrowRight className="w-6 h-6" />
-            </button>
+            </Button>
           </div>
         </div>
 
@@ -121,16 +122,16 @@ const Testimonial = () => {
                         <p className="text-xl mb-4">{testimonial.quote}</p>
                         <div className="flex items-center justify-between">
                           <div className="text-lg">{testimonial.author}</div>
-                          <button
+                          <Button
                             onClick={handlePlayPause}
-                            className="p-2 hover:bg-white/20 rounded-full transition-colors cursor-pointer"
+                            className="p-2 hover:bg-white/20 rounded-full cursor-pointer"
                           >
                             {isPlaying ? (
                               <BsPauseFill size={24} />
                             ) : (
                               <BsPlayFill size={24} />
                             )}
-                          </button>
+                          </Button>
                         </div>
                       </div>
                     </div>
