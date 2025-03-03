@@ -12,6 +12,7 @@ import DesignSection from './components/DesignSection';
 import Features from './components/Features';
 import Hero from './components/Hero';
 import Navbar from './components/Navbar';
+import Newsletter from './components/Newsletter';
 import Testimonial from './components/Testimonial';
 
 const App = () => {
@@ -24,6 +25,7 @@ const App = () => {
       <DesignSection />
       <Testimonial />
       <About />
+      <Newsletter />
     </>
   );
 };
