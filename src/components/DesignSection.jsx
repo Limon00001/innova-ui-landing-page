@@ -67,7 +67,7 @@ const DesignSection = () => {
   };
 
   return (
-    <section className="overflow-hidden py-10 bg-black text-white">
+    <section className="overflow-hidden py-10 bg-light text-primary dark:bg-primary dark:text-light">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-32">
         {/* Title */}
         <div className="max-w-[50rem] mb-12 lg:mb-24">
@@ -82,7 +82,7 @@ const DesignSection = () => {
           <div className="flex flex-col justify-between gap-16">
             {/* Subtitle */}
             <div>
-              <p className="text-2xl text-gray-300">
+              <p className="text-2xl text-gray-500 dark:text-gray-300">
                 Rethink the web dev cycle with Innova UI. Give your design and
                 marketing teams the power to launch sophisticated sites quickly
                 - so your dev team can focus on more complex work, not
@@ -90,7 +90,7 @@ const DesignSection = () => {
               </p>
               <Button
                 to="/"
-                className="btn-inline group px-6 py-3 bg-blue-600 font-semibold tracking-wider rounded-md hover:bg-blue-700 mt-8"
+                className="btn-inline group px-6 py-3 text-white bg-blue-600 font-semibold tracking-wider rounded-md hover:bg-blue-700 mt-8"
               >
                 Get Started{' '}
                 <HiArrowLongRight className="ml-3 size-5 group-hover:translate-x-1 transition-transform duration-200" />
@@ -117,7 +117,9 @@ const DesignSection = () => {
                   {/* Tab Title */}
                   <h3
                     className={`text-xl font-semibold mb-2 ${
-                      tab.id === activeTab ? 'text-white' : 'text-gray-400'
+                      tab.id === activeTab
+                        ? 'text-primary dark:text-white'
+                        : 'text-black/30 dark:text-gray-400'
                     }`}
                     onClick={() => handleTabClick(tab.id)}
                   >
@@ -126,7 +128,7 @@ const DesignSection = () => {
 
                   {/* Tab Description */}
                   <p
-                    className={`text-gray-700 transition-all duration-300 ${
+                    className={`text-gray-700 dark:text-gray-600 transition-all duration-300 ${
                       activeTab === tab.id
                         ? 'h-auto opacity-100'
                         : 'h-0 opacity-0 overflow-hidden'
@@ -169,7 +171,7 @@ const DesignSection = () => {
                     {/* Play/Pause Button */}
                     <Button
                       onClick={handlePlayPause}
-                      className="p-2 text-white hover:text-gray-300 cursor-pointer"
+                      className="p-2 text-primary dark:text-light hover:text-gray-500 dark:hover:text-gray-300 cursor-pointer"
                     >
                       {isPlaying ? (
                         <BsPauseFill className="size-6" />

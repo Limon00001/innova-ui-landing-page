@@ -6,7 +6,8 @@
  */
 
 // External Dependencies
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { LuMoon, LuSun } from 'react-icons/lu';
 import { MdClose, MdKeyboardArrowDown, MdMenu } from 'react-icons/md';
 import { Link } from 'react-router';
 
@@ -17,6 +18,32 @@ import Button from './Button.jsx';
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeDropDown, setActiveDropDown] = useState(null);
+  const [hasShadow, setHasShadow] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(() => {
+    const mode = localStorage.getItem('darkMode');
+    return mode ? JSON.parse(mode) : false;
+  });
+
+  // Dark Mode
+  useEffect(() => {
+    localStorage.setItem('darkMode', JSON.stringify(isDarkMode));
+    if (isDarkMode) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }, [isDarkMode]);
+
+  // Shadow on Scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 0;
+      setHasShadow(isScrolled);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const toggleMenu = () => {
     setIsMenuOpen((prev) => !prev);
@@ -27,7 +54,11 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 bg-black text-white border-b border-white/10 z-50">
+    <nav
+      className={`fixed top-0 left-0 right-0 bg-light text-primary border-b border-white/10 dark:shadow-black z-50 backdrop-blur-lg dark:bg-primary dark:text-gray-300 transition-all duration-300 ${
+        hasShadow ? 'shadow-md dark:shadow-gray-800/50' : ''
+      }`}
+    >
       <div className="container mx-auto px-4 py-2 md:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -43,7 +74,7 @@ const Navbar = () => {
               <div key={key} className="relative">
                 <Button
                   onClick={() => toggleDropDown(key)}
-                  className="flex items-center hover:text-gray-300 px-3 py-2 rounded-md text-sm font-medium"
+                  className="flex items-center hover:text-gray-500 dark:hover:text-gray-400 px-3 py-2 rounded-md text-sm font-medium"
                 >
                   {menuItems[key].title}
                   <MdKeyboardArrowDown
@@ -118,40 +149,72 @@ const Navbar = () => {
                 )}
               </div>
             ))}
-            <Button to="/enterprise" className="btn-navAuthLink py-2">
+            <Button
+              to="/enterprise"
+              className="btn-navAuthLink hover:text-gray-500 dark:hover:text-gray-400 py-2"
+            >
               Enterprise
             </Button>
-            <Button to="/pricing" className="btn-navAuthLink py-2">
+            <Button
+              to="/pricing"
+              className="btn-navAuthLink hover:text-gray-500 dark:hover:text-gray-400 py-2"
+            >
               Pricing
             </Button>
           </div>
 
           {/* Button */}
           <div className="hidden md:flex items-center space-x-4">
-            <Button to="/" className="hidden xl:block btn-navAuthLink">
+            <Button
+              to="/"
+              className="hidden xl:block btn-navAuthLink hover:text-gray-500 dark:hover:text-gray-400"
+            >
               Login
             </Button>
-            <Button to="/" className="hidden xl:block btn-navAuthLink">
+            <Button
+              to="/"
+              className="hidden xl:block btn-navAuthLink hover:text-gray-500 dark:hover:text-gray-400"
+            >
               Contact Sales
             </Button>
             <Button
               to="/"
-              className="btn-navAuthLink py-2 bg-blue-600 hover:bg-blue-700"
+              className="py-2 text-sm font-medium px-3 rounded-md text-light bg-blue-600 hover:bg-blue-700"
             >
               Get Started - It&apos;s Free
+            </Button>
+            <Button
+              onClick={() => setIsDarkMode((prev) => !prev)}
+              className="btn-navAuthLink hover:text-gray-500 dark:hover:text-gray-400 cursor-pointer"
+            >
+              {isDarkMode ? (
+                <LuSun className="h-5 w-5" />
+              ) : (
+                <LuMoon className="h-5 w-5" />
+              )}
             </Button>
           </div>
 
           {/* Mobile Hamburger */}
-          <div className="md:hidden">
+          <div className="md:hidden flex items-center">
             <Button
               onClick={toggleMenu}
-              className="btn-inline justify-center p-2 rounded-md hover:bg-gray-700"
+              className="btn-inline justify-center p-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-900 backdrop-blur-lg"
             >
               {isMenuOpen ? (
                 <MdClose className="block h-6 w-6 cursor-pointer" />
               ) : (
                 <MdMenu className="block h-6 w-6 cursor-pointer" />
+              )}
+            </Button>
+            <Button
+              onClick={() => setIsDarkMode((prev) => !prev)}
+              className="btn-navAuthLink hover:text-gray-500 cursor-pointer"
+            >
+              {isDarkMode ? (
+                <LuSun className="h-5 w-5" />
+              ) : (
+                <LuMoon className="h-5 w-5" />
               )}
             </Button>
           </div>
@@ -166,7 +229,7 @@ const Navbar = () => {
               <div key={key} className="space-y-2">
                 <Button
                   onClick={() => toggleDropDown(key)}
-                  className="flex items-center hover:text-gray-300 px-3 py-2 rounded-md"
+                  className="flex items-center hover:text-gray-500 px-3 py-2 rounded-md"
                 >
                   {menuItems[key].title}
                   <MdKeyboardArrowDown

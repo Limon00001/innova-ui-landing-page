@@ -27,20 +27,25 @@ html,
 
 @theme {
   --color-primary: #080806;
+  --color-light: #f4f5f9;
 }
 
 /* Utility classes */
 @layer utilities {
   .btn-navAuthLink {
-    @apply text-sm font-medium px-3 rounded-md hover:text-gray-300;
+    @apply text-sm font-medium px-3 rounded-md;
   }
 
   .btn-inline {
-    @apply inline-flex items-center text-white hover:text-gray-300;
+    @apply inline-flex items-center;
   }
 
   .btn-style {
-    @apply text-white px-8 py-4 text-lg font-medium;
+    @apply px-8 py-4 text-lg font-medium;
+  }
+
+  .btn-group {
+    @apply block py-2 hover:text-gray-500;
   }
 
   .horizontal-scroll {

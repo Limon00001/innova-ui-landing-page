@@ -59,7 +59,7 @@ const About = () => {
   }, []);
 
   return (
-    <section className="bg-black text-white py-24">
+    <section className="bg-light text-primary dark:bg-primary dark:text-light py-24">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="grid grid-cols-1 lg:grid-cols-2 md:gap-32  gap-8">
@@ -69,7 +69,7 @@ const About = () => {
             </h2>
           </div>
           <div className="mb-24">
-            <p className="text-xl text-gray-300 mb-8 max-w-[35rem]">
+            <p className="text-xl text-gray-500 dark:text-gray-300 mb-8 max-w-[35rem]">
               Write, edit, and update content — or generate it with the help of
               AI — directly in InnovaUI, then publish with a click.Easily create
               page layouts by adding the elements you want and pulling in
@@ -113,7 +113,7 @@ const About = () => {
                   Generate styled content quickly
                 </h3>
               </div>
-              <p className="text-xl text-gray-300 mb-8 max-w-[35rem]">
+              <p className="text-xl text-gray-500 mb-8 max-w-[35rem]">
                 Innova&apos;s AI tools elevate your web projects through
                 contextual design and writing help, machine-powered translation,
                 and more.
@@ -130,12 +130,12 @@ const About = () => {
                 <div
                   key={feature.id}
                   id={feature.id}
-                  className="feature-item scroll-mt-24 md:h-72 border-b border-white/10 pb-16"
+                  className="feature-item scroll-mt-24 md:h-72 border-b border-gray-300/70 dark:border-white/10 pb-16"
                 >
                   <div className="max-w-[35ch] mb-4">
                     <h3 className="text-2xl font-semibold">{feature.title}</h3>
                   </div>
-                  <p className="text-xl text-gray-300 mb-8 max-w-[35rem]">
+                  <p className="text-xl text-gray-500 mb-8 max-w-[35rem]">
                     {feature.description}
                   </p>
                   <Button href="#" className="btn-inline text-lg font-medium">

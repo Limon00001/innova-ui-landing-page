@@ -16,7 +16,7 @@ import Button from './Button';
 
 const Hero = () => {
   return (
-    <section className="pt-24 bg-black text-white md:pt-32 overflow-x-hidden">
+    <section className="pt-24 bg-light text-primary dark:bg-primary dark:text-light md:pt-32 overflow-x-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-16 relative">
         {/* Subtitle */}
         <div className="mb-6">
@@ -35,7 +35,7 @@ const Hero = () => {
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
           {/* Description */}
           <p className="text-[#999999] md:text-xl mb-8 md:mb-0 leading-relaxed">
-            As the first-ever website experience platform, CodeTutor lets
+            As the first-ever website experience platform, InnovaUI lets
             marketers, designers, and developers come together to build, manage,
             and optimize web experiences that get results.
           </p>
@@ -43,13 +43,13 @@ const Hero = () => {
           <div className="flex flex-wrap sm:flex-row gap-8 shrink-0">
             <Button
               to="/"
-              className="btn-style bg-[#4353FF] hover:bg-blue-700 rounded"
+              className="btn-style text-light bg-[#4353FF] hover:bg-blue-700 rounded"
             >
               Start Building
             </Button>
             <Button
               to="/"
-              className="btn-style flex items-center group hover:text-white/50"
+              className="btn-style text-primary dark:text-gray-200 flex items-center group hover:text-gray-500"
             >
               Contact Sales{' '}
               <HiArrowLongRight className="size-5 ml-3 group-hover:translate-x-1 transition-transform duration-200" />

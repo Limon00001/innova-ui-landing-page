@@ -13,7 +13,7 @@ import Button from './Button';
 
 const Newsletter = () => {
   return (
-    <section className="bg-black text-white py-20">
+    <section className="bg-light text-primary dark:bg-primary dark:text-light py-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row justify-between gap-16">
           <div className="md:w-3/5">
@@ -29,7 +29,7 @@ const Newsletter = () => {
             </p>
             <Button
               to="/"
-              className="bg-blue-600 hover:bg-blue-700 text-white hover:text-gray-300 px-6 py-3 rounded-md"
+              className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md"
             >
               Get started — it&apos;s free
             </Button>
@@ -46,7 +46,7 @@ const Newsletter = () => {
 
             <div>
               <h2 className="text-2xl font-bold mb-4">Contact sales</h2>
-              <p className="text-gray-300 mb-4">
+              <p className="text-gray-500 mb-4">
                 Interested in InnovaUI Enterprise? Get in touch with our sales
                 team to receive a free personalized demo.
               </p>
@@ -62,7 +62,7 @@ const Newsletter = () => {
               <h2 className="text-2xl font-bold mb-4">
                 Hire a Certified Partner
               </h2>
-              <p className="text-gray-300 mb-4">
+              <p className="text-gray-500 mb-4">
                 Extend the power of your team by hiring a Certified InnovaUI
                 Partner — we&apos;ll match you with the best in the business.
               </p>
