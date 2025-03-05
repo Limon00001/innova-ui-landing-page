@@ -12,14 +12,17 @@ import { BrowserRouter as Router } from 'react-router';
 
 // Internal Dependencies
 import App from './App.jsx';
+import { ThemeProvider } from './context/ThemeContext.jsx';
 
 // Styles
 import './index.css';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <Router>
-      <App />
-    </Router>
+    <ThemeProvider>
+      <Router>
+        <App />
+      </Router>
+    </ThemeProvider>
   </StrictMode>,
 );

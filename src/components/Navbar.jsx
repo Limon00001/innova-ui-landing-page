@@ -13,26 +13,16 @@ import { Link } from 'react-router';
 
 // Internal Dependencies
 import { menuItems } from '../assets/data.js';
+import useDarkMode from '../useContext/useDarkMode.jsx';
 import Button from './Button.jsx';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeDropDown, setActiveDropDown] = useState(null);
   const [hasShadow, setHasShadow] = useState(false);
-  const [isDarkMode, setIsDarkMode] = useState(() => {
-    const mode = localStorage.getItem('darkMode');
-    return mode ? JSON.parse(mode) : false;
-  });
 
   // Dark Mode
-  useEffect(() => {
-    localStorage.setItem('darkMode', JSON.stringify(isDarkMode));
-    if (isDarkMode) {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-  }, [isDarkMode]);
+  const { darkMode, setDarkMode } = useDarkMode();
 
   // Shadow on Scroll
   useEffect(() => {
@@ -177,17 +167,24 @@ const Navbar = () => {
             >
               Contact Sales
             </Button>
+            <div className="relative group">
+              <Button
+                to="/"
+                className="py-2 text-sm font-medium px-3 rounded-md text-light bg-blue-600 hover:bg-blue-700"
+              >
+                Get Started - It&apos;s Free
+              </Button>
+              <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover:block">
+                <div className="text-white text-xs rounded py-1 px-2 whitespace-nowrap">
+                  Start your free trial today!
+                </div>
+              </div>
+            </div>
             <Button
-              to="/"
-              className="py-2 text-sm font-medium px-3 rounded-md text-light bg-blue-600 hover:bg-blue-700"
-            >
-              Get Started - It&apos;s Free
-            </Button>
-            <Button
-              onClick={() => setIsDarkMode((prev) => !prev)}
+              onClick={() => setDarkMode((prev) => !prev)}
               className="btn-navAuthLink hover:text-gray-500 dark:hover:text-gray-400 cursor-pointer"
             >
-              {isDarkMode ? (
+              {darkMode ? (
                 <LuSun className="h-5 w-5" />
               ) : (
                 <LuMoon className="h-5 w-5" />
@@ -208,10 +205,10 @@ const Navbar = () => {
               )}
             </Button>
             <Button
-              onClick={() => setIsDarkMode((prev) => !prev)}
+              onClick={() => setDarkMode((prev) => !prev)}
               className="btn-navAuthLink hover:text-gray-500 cursor-pointer"
             >
-              {isDarkMode ? (
+              {darkMode ? (
                 <LuSun className="h-5 w-5" />
               ) : (
                 <LuMoon className="h-5 w-5" />

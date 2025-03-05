@@ -97,7 +97,7 @@ const DesignSection = () => {
               </Button>
             </div>
 
-            {/* Accrodians */}
+            {/* Accrodions */}
             <div className="space-y-2">
               {tabsData.map((tab) => (
                 <div

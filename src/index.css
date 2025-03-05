@@ -8,6 +8,9 @@
 /* Tailwind CSS */
 @import 'tailwindcss';
 
+/* Tailwind Scrollbar */
+@plugin 'tailwind-scrollbar';
+
 /* Custom Variant */
 @custom-variant dark (&:where(.dark, .dark *));
 
