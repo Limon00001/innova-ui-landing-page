@@ -70,7 +70,7 @@ const Footer = () => {
             ))}
           </div>
           <div className="text-gray-400 text-sm">
-            © {new Date().getFullYear()} CodeTutor UI. All rights reserved.
+            © {new Date().getFullYear()} Innova UI. All rights reserved.
           </div>
         </div>
       </div>
