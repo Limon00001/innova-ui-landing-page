@@ -7,6 +7,8 @@
 
 # Project Documentation
 
+![Project Image](./public/banner.png)
+
 ## Project Description
 
 A modern React-based landing page featuring various interactive components and responsive design principles, including accordions, video playback controls, and responsive navigation. The project serves as both a practical implementation and a learning resource for advanced React concepts.
